@@ -1,6 +1,7 @@
 package BubbleTeaShop.BubbleTeaParts;
 
 public class Orange extends Fruit{
+	private String name = "Orange";
 	
 	private double price = 0.5;
 	public Orange() {
@@ -26,10 +27,20 @@ public class Orange extends Fruit{
 
 	@Override
 	public void boil() {
-		System.out.println("The " + this.getClass().getSimpleName() + " is boiling.");
+		System.out.println("The " +  this.getName() + " is boiling.");
 		
 	}
 	
+	@Override
+	public void setName(String name) {
+		this.name = name;
+		
+	}
 	
+	@Override
+	public String getName() {
+		
+		return name;
+	}
 
 }

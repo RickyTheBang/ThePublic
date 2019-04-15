@@ -1,6 +1,7 @@
 package BubbleTeaShop.BubbleTeaParts;
 
 public class Bubble  extends BubbleTeaIngredient{
+	private String name = "Bubble";
 	
 	
 	
@@ -51,7 +52,17 @@ private double price = 0.5;
 		
 	}
 
+	@Override
+	public void setName(String name) {
+		this.name = name;
+		
+	}
 	
+	@Override
+	public String getName() {
+		
+		return name;
+	}
 	
 
 }

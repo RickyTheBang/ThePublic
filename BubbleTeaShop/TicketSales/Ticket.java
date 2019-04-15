@@ -90,11 +90,7 @@ public class Ticket {
 				+ "]";
 	}
 	
-	
 
-//	public void setPrice(double price) {
-//		this.price = price;
-//	}
 	
 	
 	

@@ -2,6 +2,7 @@ package BubbleTeaShop.BubbleTeaParts;
 
 public abstract class BubbleTeaIngredient {
 	private double price;
+	public String name = this.getClass().getSimpleName();
 
 	public BubbleTeaIngredient() {
 
@@ -14,10 +15,12 @@ public abstract class BubbleTeaIngredient {
 	public abstract double getPrice() ;
 
 	public  abstract void setPrice(double price) ;
-
+	
+	public  abstract void setName(String name) ;
+	public  abstract String getName();
 	@Override
 	public String toString() {
-		String result ="Ingredient: " + getClass().getSimpleName();
+		String result ="Ingredient: " + this.getName();
 		if(this instanceof Boilable) {
 			
 			result += " is boiling"+", price = " + getPrice();;

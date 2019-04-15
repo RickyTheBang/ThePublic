@@ -19,17 +19,32 @@ public class App13_BubbleTeaBarFinal {
 		BubbleTeaIngredient orange = new Orange();
 		List<BubbleTeaIngredient> l4 = new ArrayList<BubbleTeaIngredient>();
 		l4.add(orange);
+		
 		l4.add(new BubbleTeaIngredient() {
-			double price = 25;
+			//double price = 25;
+			//String name = "Passion Fruit";
+			
 
 			@Override
 			public double getPrice() {
-				return this.price;
+				
+				return 4;
 			}
 
 			@Override
 			public void setPrice(double price) {
-				this.price = price;
+				//this.price = 25;
+			}
+			@Override
+			public void setName(String name) {
+				
+				
+			}
+
+			@Override
+			public String getName() {
+				
+				return "Passion Fruit";
 			}
 		});
 
@@ -45,10 +60,12 @@ public class App13_BubbleTeaBarFinal {
 		teaFactory.add(bt2);
 		teaFactory.add(bt3);
 		teaFactory.add(bt4);
+		
 
 		for (BubbleTea bt : teaFactory) {
+			if(bt !=null) {
 			bt.drink();
-
+			}
 			
 		}
 

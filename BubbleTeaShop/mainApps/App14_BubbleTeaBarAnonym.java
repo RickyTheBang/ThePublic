@@ -21,6 +21,7 @@ public class App14_BubbleTeaBarAnonym {
 		l4.add(orange);
 		l4.add(new BubbleTeaIngredient() {
 			double price = 25;
+		
 
 			@Override
 			public double getPrice() {
@@ -30,6 +31,17 @@ public class App14_BubbleTeaBarAnonym {
 			@Override
 			public void setPrice(double price) {
 				this.price = price;
+			}
+			@Override
+			public void setName(String name) {
+				
+				
+			}
+
+			@Override
+			public String getName() {
+				
+				return "Passion Fruit";
 			}
 		});
 

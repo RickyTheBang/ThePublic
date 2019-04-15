@@ -82,7 +82,7 @@ public class BubbleTeaFactory {
 		this.stock = stock;
 	}
 
-	private void stockEmpty(List<BubbleTeaIngredient> ingrediants) throws BubbleIngredientShortage {
+	public void stockEmpty(List<BubbleTeaIngredient> ingrediants) throws BubbleIngredientShortage {
 
 		for (BubbleTeaIngredient ingr : ingrediants) {
 

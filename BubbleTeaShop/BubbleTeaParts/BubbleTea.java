@@ -33,7 +33,10 @@ public class BubbleTea {
 		double total = 0;
 		for (BubbleTeaIngredient ing : getIngrediants()) {
 			total += ing.getPrice();
-			System.out.println(ing.getClass().getSimpleName() + ": "+ing.getPrice());
+			System.out.println(ing.getName() + ": "+ing.getPrice());
+			if(ing instanceof Boilable) {
+				((Boilable)ing).boil();
+			}
 		}
 		System.out.println("The total price is " + total +"\n");
 	}

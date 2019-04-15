@@ -49,7 +49,7 @@ public class App10_BubbleTeaBarException {
 		listO1.add(ing6);
 		listO1.add(ing7);
 		
-		listO1.add(ing7);
+		//listO1.add(ing7);
 		
 		
 		

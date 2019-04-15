@@ -20,16 +20,29 @@ public class App11_BubbleTeaBarFactory {
 		List<BubbleTeaIngredient> l4 = new ArrayList<BubbleTeaIngredient>();
 		l4.add(orange);
 		l4.add(new BubbleTeaIngredient() {
-			double price = 25;
+			//double price = 25;
+			
 
 			@Override
 			public double getPrice() {
-				return this.price;
+				return 15;
 			}
 
 			@Override
 			public void setPrice(double price) {
-				this.price = price;
+				
+			}
+
+			@Override
+			public void setName(String name) {
+				
+				
+			}
+
+			@Override
+			public String getName() {
+				
+				return "Passion Fruit";
 			}
 		});
 

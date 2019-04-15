@@ -1,6 +1,7 @@
 package BubbleTeaShop.BubbleTeaParts;
 
 public class Ginger extends Spice{
+	private String name = "Ginger";
 	
 private double price = 1;
 
@@ -27,10 +28,20 @@ private double price = 1;
 
 	@Override
 	public void boil() {
-		System.out.println("The " + this.getClass().getSimpleName() + " is boiling.");
+		System.out.println("The " +  this.getName() + " is boiling.");
 		
 	}
 	
+	@Override
+	public void setName(String name) {
+		this.name = name;
+		
+	}
 	
+	@Override
+	public String getName() {
+		
+		return name;
+	}
 
 }
