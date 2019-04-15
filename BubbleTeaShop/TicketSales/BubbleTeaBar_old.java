@@ -5,16 +5,15 @@ import java.util.List;
 import BubbleTeaShop.BubbleTeaParts.*;
 
 
-public class BubbleTeaBar {
-	private BubbleTeaFactory factory = new BubbleTeaFactory();
-	private Register register = factory.getRegister();
-	private Stock stock = factory.getStock();
-	
+public class BubbleTeaBar_old {
+
+	private Register register = new Register();
+	private Stock stock = new Stock(2, 2, 2, 2, 2, 2,2);
 	private boolean flagF1 = true;
 	private boolean flagF2 = true;
 	private boolean flagF3 = true;
 
-	public BubbleTeaBar() {
+	public BubbleTeaBar_old() {
 
 	}
 
@@ -30,6 +29,31 @@ public class BubbleTeaBar {
 
 		} catch (BubbleIngredientShortage e) {
 			// TODO Auto-generated catch block
+			if(flagF3){
+				System.out.println(e.getMessage());
+				
+				flagF3 = false;
+			}
+			output = null;
+			
+		}
+		
+		flagF3 = true;
+		return output;
+	
+	}
+
+	public BubbleTea makeBubbleTea(List<BubbleTeaIngredient> order) {
+		BubbleTea output = new BubbleTea(order);
+
+		try {
+			stockEmpty(order);
+			Order o = new Order(order);
+			Ticket t = new Ticket(o);
+			register.addTicket(t);
+
+		} catch (BubbleIngredientShortage e) {
+			// TODO Auto-generated catch block
 			if(flagF1){
 				System.out.println(e.getMessage());
 				
@@ -38,19 +62,9 @@ public class BubbleTeaBar {
 			output = null;
 			
 		}
-		
 		flagF1 = true;
 		return output;
-	
-	}
 
-	public BubbleTea makeBubbleTea(List<BubbleTeaIngredient> order) {
-		return factory.makeBubbleTea(order);
-		
-	}
-	
-	public BubbleTea makeBubbleTea( MenuCard menu) {
-		return factory.makeBubbleTea(menu);
 	}
 
 	public BubbleTea makeBubbleTea(Order order) {

@@ -6,11 +6,11 @@ public class BubbleIngredientShortage extends Exception {
 	private static final long serialVersionUID = 4794227585131382496L;
 	
 	
-	BubbleIngredientShortage(){
+	public BubbleIngredientShortage(){
 		super();
 	}
 	
-	BubbleIngredientShortage(String message){
+	public BubbleIngredientShortage(String message){
 		super(message);
 	}
 	

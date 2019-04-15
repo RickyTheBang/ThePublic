@@ -50,7 +50,7 @@ public class App09_BubbleTeaBar {
 		listO3.add(bubbleStrawberry);
 		Order order3 = new Order(listO3);
 
-		BubbleTea bt1 = bar.makeBubbleTea(t1.getOrder());
+		BubbleTea bt1 = bar.acceptTicket(t1);
 		BubbleTea bt2 = bar.makeBubbleTea(listO2);
 		BubbleTea bt3 = bar.makeBubbleTea(order3);
 

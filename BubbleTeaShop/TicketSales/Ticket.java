@@ -9,7 +9,7 @@ import BubbleTeaShop.BubbleTeaParts.BubbleTeaIngredient;
 public class Ticket {
 	private LocalDateTime ticketTime= LocalDateTime.now().plusSeconds(getTicketNo()*50);
 	
-	private static int ticketNo = 1;
+	private static int ticketNo = 0;
 	private double price=0;
 	private double profit=0;
 	private Order order;

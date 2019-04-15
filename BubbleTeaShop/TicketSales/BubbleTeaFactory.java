@@ -3,30 +3,31 @@ package BubbleTeaShop.TicketSales;
 import java.util.List;
 
 import BubbleTeaShop.BubbleTeaParts.*;
+import BubbleTeaShop.TicketSales.*;
 
 
-public class BubbleTeaBar {
-	private BubbleTeaFactory factory = new BubbleTeaFactory();
-	private Register register = factory.getRegister();
-	private Stock stock = factory.getStock();
-	
+public class BubbleTeaFactory {
+
+	private Register register = new Register();
+	private Stock stock = new Stock(2, 2, 2, 2, 2, 5,5);
 	private boolean flagF1 = true;
 	private boolean flagF2 = true;
 	private boolean flagF3 = true;
 
-	public BubbleTeaBar() {
+	public BubbleTeaFactory() {
 
 	}
 
-	public BubbleTea  acceptTicket(Ticket ticketIn) {
 	
-		BubbleTea output = new BubbleTea(ticketIn.getOrder().getIngredients());
-		
+
+	public BubbleTea makeBubbleTea(List<BubbleTeaIngredient> order) {
+		BubbleTea output = new BubbleTea(order);
+
 		try {
-			stockEmpty(ticketIn.getOrder().getIngredients());
-			
-			
-			register.addTicket(ticketIn);
+			stockEmpty(order);
+			Order o = new Order(order);
+			Ticket t = new Ticket(o);
+			register.addTicket(t);
 
 		} catch (BubbleIngredientShortage e) {
 			// TODO Auto-generated catch block
@@ -38,26 +39,16 @@ public class BubbleTeaBar {
 			output = null;
 			
 		}
-		
 		flagF1 = true;
 		return output;
-	
+
 	}
 
-	public BubbleTea makeBubbleTea(List<BubbleTeaIngredient> order) {
-		return factory.makeBubbleTea(order);
-		
-	}
-	
 	public BubbleTea makeBubbleTea( MenuCard menu) {
-		return factory.makeBubbleTea(menu);
-	}
-
-	public BubbleTea makeBubbleTea(Order order) {
-		BubbleTea output = new BubbleTea(order.getIngredients());
+		BubbleTea output = new BubbleTea(menu.getOrder().getIngredients());
 		try {
-			stockEmpty(order.getIngredients());
-			Ticket t = new Ticket(order);
+			stockEmpty(menu.getOrder().getIngredients());
+			Ticket t = new Ticket(menu.getOrder());
 			register.addTicket(t);
 		}catch (BubbleIngredientShortage e) {
 			// TODO Auto-generated catch block

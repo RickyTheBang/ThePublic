@@ -25,12 +25,16 @@ public class App08_OrderHandler_ArrayList {
 		
 		for(BubbleTeaIngredient ingredient: bubbleTea.getIngrediants()) {
 			System.out.println(ingredient);
+		
 		}
 		
 		double totalPrice = 0;
 		
+		
+		
 		for(BubbleTeaIngredient b:  bubbleTea.getIngrediants()) {
 			totalPrice += b.getPrice();
+		
 		}
 		
 		System.out.println("Total Price");
